@@ -3,20 +3,14 @@ def arithmetic_arranger(problems, show_answer = False):
         return "Error: Too many problems."
     
     top_section = []
-
     bottom_section = []
-
     line_section = []
-
     answer_section = []
 
     for problem in problems:
         parts = problem.split()
-
         first = parts[0]
-
         operator = parts[1]
-
         second = parts[2]
 
         if operator not in ["+", "-"]:
@@ -35,13 +29,9 @@ def arithmetic_arranger(problems, show_answer = False):
             answer = str(int(first) - int(second))
 
         max_length = max(len(first), len(second)) + 2
-
         top_section.append(first.rjust(max_length))
-
         bottom_section.append(operator + " " + second.rjust(max_length - 2))
-
         line_section.append("-" * max_length)
-
         answer_section.append(answer.rjust(max_length))
 
     arranged_problems = ""
